@@ -13,6 +13,8 @@ body{
     font-optical-sizing: auto;
     font-weight: 300;
     font-style: normal;
+    position: fixed;
+    width: 100%;
 }
 .nomeLogo{
     padding-left: 30px;
