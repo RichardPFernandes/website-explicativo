@@ -1,5 +1,5 @@
 import './Navbar.css';
-import logo from './img/logo.png';
+import logo from '../assets/logo.png';
 
 function Navbar() {
     return (
@@ -9,9 +9,6 @@ function Navbar() {
             <a className='nomeLogo'>Stack </a>
             <img className='imagem' src={logo} alt="Logo" />
           </div>
-          <style>
-          @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital@0;1&display=swap');
-          </style>
         </div>
       </>
     );
