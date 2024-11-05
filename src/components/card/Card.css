@@ -10,6 +10,13 @@
     border-radius: 35px;
 }
 
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    cursor: pointer;
+}
+
 .card-imagem {
     height: 336px;
+    max-width: 400px;
 }
