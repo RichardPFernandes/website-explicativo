@@ -2,11 +2,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid black;
     padding: 1rem;
     width: 472px;
+    height: 482px;
+    margin: 3rem;
+    box-shadow: 1px 4px 10px 3px rgba(0, 0, 0, 0.281);
+    border-radius: 35px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s;
+    cursor: pointer;
 }
 
 .card-imagem {
     height: 336px;
+    max-width: 400px;
 }

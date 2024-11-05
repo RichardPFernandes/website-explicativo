@@ -13,12 +13,40 @@ main {
     font-size: 3rem;
     text-shadow: 1px 3px 4px rgba(0, 0, 0, 0.404);
 }
+.carousel-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 1900px;
+}
 
 .carousel {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 7rem;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 33.33%;
+  box-sizing: border-box;
+}
+
+.carousel-button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  margin-right: 10px;
+}
+
+.next {
+  margin-left: 10px;
 }
