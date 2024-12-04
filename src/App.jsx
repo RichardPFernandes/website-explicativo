@@ -1,7 +1,7 @@
 import "./App.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import Card from "./components/card/Card";
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar";
 import html from "./assets/html.png";
 import js from "./assets/js.png";
 import css from "./assets/css.png";
