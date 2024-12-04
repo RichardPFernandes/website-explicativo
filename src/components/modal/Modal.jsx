@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Modal.css";
 import Sidebar from "../Sidebar";
 import Content from "../Content";
 
 function Modal({ title, topics, content, onClose }) {
+  const [filteredContent, setFilteredContent] = useState(content);
+
+  const changeContent = (topic) => {
+    const newContent = content.filter((item) => item.topics === topic);
+    setFilteredContent(newContent);
+  };
   return (
     <div className="modal-overlay">
       <div className="modal-content">
@@ -14,8 +20,8 @@ function Modal({ title, topics, content, onClose }) {
           </button>
         </div>
         <div className="modal-body">
-          <Sidebar topics={topics} />
-          <Content content={content} />
+          <Sidebar topics={topics} changeContent={changeContent} />
+          <Content content={filteredContent} />
         </div>
       </div>
     </div>
