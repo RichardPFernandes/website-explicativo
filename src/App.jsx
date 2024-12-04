@@ -9,17 +9,21 @@ import react from "./assets/react.png";
 import node from "./assets/node.svg";
 import docker from "./assets/docker.png";
 import Modal from "./components/modal/Modal";
+import { getContent } from "./components/content/Contents";
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({});
+
 
   const cards = [
-    { id: 1, imagem: html },
-    { id: 2, imagem: js },
-    { id: 3, imagem: css },
-    { id: 4, imagem: react },
-    { id: 5, imagem: node },
-    { id: 6, imagem: docker },
+    { id: 1, imagem: html, assunto: "html" },
+    { id: 2, imagem: js, assunto: "javascript" },
+    { id: 3, imagem: css, assunto: "css" },
+    { id: 4, imagem: react, assunto: "react" },
+    { id: 5, imagem: node, assunto: "node" },
+    { id: 6, imagem: docker, assunto: "devops" },
   ];
 
   const totalSlides = Math.ceil(cards.length / 3);
@@ -36,29 +40,14 @@ function App() {
     );
   };
 
-      const [isModalOpen, setIsModalOpen] = useState(false);
-      const [modalContent, setModalContent] = useState({
-        title: "HTML",
-        topics: [
-          "Estruturais",
-          "Textuais",
-          "Mídias",
-          "Formulários",
-          "Tabelas",
-          "Semânticas",
-        ],
-        content: [
-          { tag: "<html>", description: "Define o escopo do HTML" },
-          { tag: "<body>", description: "Corpo do HTML" },
-          { tag: "<div>", description: "Divisória" },
-        ],
-      });
 
-      const openModal = () => {
-        setIsModalOpen(true);
-      };
+  const openModal = (assunto) => {
+    const content = getContent(assunto); 
+    setModalContent(content);
+    setIsModalOpen(true);
+  };
 
-      const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => setIsModalOpen(false);
 
   return (
     <>
@@ -89,7 +78,7 @@ function App() {
               >
                 {cards.map((card) => (
                   <div key={card.id} className="carousel-slide">
-                    <Card imagem={card.imagem} onClick={openModal} />
+                    <Card imagem={card.imagem} onClick={() => openModal(card.assunto)} />
                   </div>
                 ))}
               </div>
